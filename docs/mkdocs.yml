@@ -175,6 +175,7 @@ pages:
 - ['project/who-written-for.md', 'Project', 'README first']
 - ['project/set-up-prereqs.md', 'Project', 'Set up prerequisites'] 
 - ['project/set-up-dev-env.md', 'Project', 'Work with a development container'] 
+- ['project/windows-client-test-server.md', 'Project', 'Set up a Windows server for client testing'] 
 - ['project/test-and-docs.md', 'Project', 'Run tests and test documentation']
 - ['project/make-a-contribution.md', 'Project', 'Make a project contribution'] 
 - ['project/advanced-contributing.md', 'Project', 'Advanced contributing']
