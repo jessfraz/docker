@@ -8,6 +8,14 @@ bundle_test_integration_cli() {
 
 # subshell so that we can export PATH without breaking other things
 (
+
+if [ "$(uname -s)" = MINGW64_NT* ] && [ -z "$DOCKER_TEST_HOST" ]; then
+	bundle .integration-windows-daemon-start
+
+	bundle_test_integration_cli
+
+	bundle .integration-windows-daemon-stop
+else
 	bundle .integration-daemon-start
 
 	bundle .integration-daemon-setup
@@ -15,4 +23,5 @@ bundle_test_integration_cli() {
 	bundle_test_integration_cli
 
 	bundle .integration-daemon-stop
+fi
 ) 2>&1 | tee -a "$DEST/test.log"
