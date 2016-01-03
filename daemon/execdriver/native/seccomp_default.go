@@ -98,23 +98,6 @@ var defaultSeccompProfile = &configs.Seccomp{
 			Args: []*configs.Arg{
 				{
 					// flags from sched.h
-					// CLONE_NEWUTS		0x04000000
-					// CLONE_NEWIPC		0x08000000
-					// CLONE_NEWUSER	0x10000000
-					// CLONE_NEWPID		0x20000000
-					// CLONE_NEWNET		0x40000000
-					Index: 0,
-					Value: uint64(0x04000000),
-					Op:    configs.LessThan,
-				},
-			},
-		},
-		{
-			Name:   "clone",
-			Action: configs.Allow,
-			Args: []*configs.Arg{
-				{
-					// flags from sched.h
 					// CLONE_NEWNS		0x00020000
 					// CLONE_NEWUTS		0x04000000
 					// CLONE_NEWIPC		0x08000000
