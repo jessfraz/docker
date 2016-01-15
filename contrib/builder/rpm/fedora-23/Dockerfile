@@ -7,7 +7,7 @@ FROM fedora:23
 RUN dnf install -y @development-tools fedora-packager
 RUN dnf install -y btrfs-progs-devel device-mapper-devel glibc-static libseccomp-devel libselinux-devel libtool-ltdl-devel selinux-policy selinux-policy-devel sqlite-devel tar
 
-ENV SECCOMP_VERSION v2.2.3
+ENV SECCOMP_VERSION 2.2.3
 RUN buildDeps=' \
 automake \
 libtool \
@@ -35,3 +35,4 @@ ENV PATH $PATH:/usr/local/go/bin
 ENV AUTO_GOPATH 1
 
 ENV DOCKER_BUILDTAGS seccomp selinux
+
