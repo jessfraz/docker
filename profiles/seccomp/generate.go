@@ -48,7 +48,7 @@ var archs = map[string]types.Arch{
 
 // convertOperator converts a Seccomp comparison operator.
 func convertOperator(in configs.Operator) (types.Operator, error) {
-	if op, ok := operators[in]; ok == true {
+	if op, ok := operators[in]; ok {
 		return op, nil
 	}
 	return "", fmt.Errorf("operator %s is not a valid operator for seccomp", in)
@@ -56,7 +56,7 @@ func convertOperator(in configs.Operator) (types.Operator, error) {
 
 // convertAction converts a Seccomp rule match action.
 func convertAction(in configs.Action) (types.Action, error) {
-	if act, ok := actions[in]; ok == true {
+	if act, ok := actions[in]; ok {
 		return act, nil
 	}
 	return "", fmt.Errorf("action %s is not a valid action for seccomp", in)
@@ -64,7 +64,7 @@ func convertAction(in configs.Action) (types.Action, error) {
 
 // convertArch converts a Seccomp comparison arch.
 func convertArch(in string) (types.Arch, error) {
-	if arch, ok := archs[in]; ok == true {
+	if arch, ok := archs[in]; ok {
 		return arch, nil
 	}
 	return "", fmt.Errorf("arch %s is not a valid arch for seccomp", in)
