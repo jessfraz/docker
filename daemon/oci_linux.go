@@ -760,6 +760,11 @@ func (daemon *Daemon) createSpec(c *container.Container) (*specs.Spec, error) {
 	s.Process.NoNewPrivileges = c.NoNewPrivileges
 	s.Linux.MountLabel = c.MountLabel
 
+	// Set the masked and readonly paths with regard to raw access paths.
+	if err := oci.SetRawAccess(&s, c.HostConfig.RawAccess); err != nil {
+		return nil, err
+	}
+
 	return (*specs.Spec)(&s), nil
 }
 

@@ -325,6 +325,9 @@ type HostConfig struct {
 	// Mounts specs used by the container
 	Mounts []mount.Mount `json:",omitempty"`
 
+	// RawAccess paths that should not be masked or set as readonly
+	RawAccess []string `json:",omitempty"`
+
 	// Run a custom init inside the container, if null, use the daemon's configured settings
 	Init *bool `json:",omitempty"`
 
