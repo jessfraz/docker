@@ -793,3 +793,14 @@ func (daemon *Daemon) mergeUlimits(c *containertypes.HostConfig) {
 	}
 	c.Ulimits = ulimits
 }
+
+// inSlice tests whether a string is contained in a slice of strings or not.
+// Comparison is case sensitive
+func inSlice(slice []string, s string) bool {
+	for _, ss := range slice {
+		if s == ss {
+			return true
+		}
+	}
+	return false
+}
