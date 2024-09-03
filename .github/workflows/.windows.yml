@@ -193,7 +193,7 @@ jobs:
           go-version: ${{ env.GO_VERSION }}
       -
         name: Download artifacts
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4.1.7
         with:
           name: ${{ inputs.os }}-unit-reports
           path: /tmp/artifacts
@@ -271,7 +271,7 @@ jobs:
           Get-ChildItem Env: | Out-String
       -
         name: Download artifacts
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4.1.7
         with:
           name: build-${{ inputs.os }}
           path: ${{ env.BIN_OUT }}
@@ -485,7 +485,7 @@ jobs:
           go-version: ${{ env.GO_VERSION }}
       -
         name: Download artifacts
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4.1.7
         with:
           name: ${{ inputs.os }}-integration-reports-${{ matrix.runtime }}
           path: /tmp/artifacts
